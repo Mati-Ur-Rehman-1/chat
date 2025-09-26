@@ -1,20 +1,3 @@
-// Import Application Insights
-const appInsights = require("applicationinsights");
-
-// Start Application Insights with your resource's instrumentation key
-appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
-  .setAutoCollectRequests(true)
-  .setAutoCollectDependencies(true)
-  .setAutoCollectPerformance(true)
-  .setAutoCollectExceptions(true)
-  .setAutoCollectConsole(true, true)
-  .setUseDiskRetryCaching(true)
-  .start();
-
-// Tracker instance (optional: custom logs ke liye use kar sakte ho)
-const client = appInsights.defaultClient;
-
-
 import express from "express";
 import bodyParser from "body-parser";
 import fetch from "node-fetch";
@@ -76,4 +59,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`✅ Server listening on port ${port}`);
 });
+
 
